@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        p { display: grid; }
+        .box { width: 30%; }
+    </style>
+    <div class="bg-light rounded border m-auto p-5 box">
+        <h2 class="text-center">Sign Up</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success ml-2 w-100" type="submit">Sign Up</button>
+        </form>
+        <p class="d-block">
+            If you have an account ( <a class="text-decoration-none" href="{% url 'login' %}">Login</a> )
+        </p>
+    </div>
+{% endblock content %}
